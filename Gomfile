@@ -1,0 +1,7 @@
+gom 'github.com/ChimeraCoder/anaconda', :commit => 'afffdbac178c0e78746ea42d7c1af963cb7ef28e'
+gom 'github.com/ChimeraCoder/tokenbucket', :commit => 'c5a927568de7aad8a58127d80bcd36ca4e71e454'
+gom 'github.com/azr/backoff', :commit => '53511d3c733003985b0b76f733df1f4d0095ee6a'
+gom 'github.com/dustin/go-jsonpointer', :commit => '2efc9fef1d9421a8d252a32e20beb10cecd2bbca'
+gom 'github.com/dustin/gojson', :commit => 'af16e0e771e2ed110f2785564ae33931de8829e4'
+gom 'github.com/garyburd/go-oauth', :commit => '255d509a6f270332ffcaef6723047891319a2ffb'
+gom 'golang.org/x/crypto', :commit => '1f22c0103821b9390939b6776727195525381532'
