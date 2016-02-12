@@ -8,13 +8,16 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
+	"path"
 )
 
+var rootDir string
 var consumerKey, consumerSecret string
 var credential *oauth.Credentials
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-	t, err := template.ParseFiles("index.html")
+	t, err := template.ParseFiles(path.Join(rootDir, "index.html"))
 	if err != nil {
 		fmt.Fprintf(w, "%v", err)
 		return
@@ -41,7 +44,7 @@ func AccessTokenHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	t, err := template.ParseFiles("access_token.html")
+	t, err := template.ParseFiles(path.Join(rootDir, "access_token.html"))
 	if err != nil {
 		fmt.Fprintf(w, "%v", err)
 		return
@@ -50,6 +53,8 @@ func AccessTokenHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	rootDir = path.Join(os.Getenv("GOPATH"), "src/github.com/utahta/go-twitter-oauth")
+
 	fmt.Println("Enter ConsumerKey: ")
 	ck, err := terminal.ReadPassword(0)
 	if err != nil {
